@@ -10,5 +10,11 @@
   <%= @post.content %>
 </p>
 
+<p>
+<% @post.pictures.each do |picture| %> 
+	<%= image_tag picture.image.url(:medium) %>
+<% end %>
+</p>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
